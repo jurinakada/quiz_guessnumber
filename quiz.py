@@ -3,6 +3,19 @@ import random
 print("Welcome to guessing number quiz!!")
 
 #the fixed system (added function)
+def difficulty():
+    print("Choose the game difficulty.")
+    print("Easy") #the answer number is 1 to 50
+    print("Normal")  #the answer number is 1 to 100
+    print("Difficult")  #the answer number is 1 to 1000
+    option = input("Your Dicision -> ")
+    if option == "Easy":
+        return 1
+    elif option == "Normal":
+        return 2
+    elif option == "Difficult":
+        return 3
+
 def user_input():
     return int(input("Please enter the number from 1 to 100-> "))
 
@@ -21,7 +34,7 @@ def check_number(answer,input_num):
         return 0
 
 def main():
-
+    user_option = difficulty()
     answer = create_number()
     while(1):
         input_num = user_input()
