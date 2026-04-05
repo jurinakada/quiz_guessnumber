@@ -55,17 +55,21 @@ def main():
     user_option = difficulty() 
     #user_option (which refers difficulty) are assighned to create_number fuction. create_number results in deciding answer number, and scope that will be entered by user.
     answer,x,y = create_number(user_option)
-    
+    #add input count to visualize attempts.
+    count = 0
     while(1):
         #user_input() ask users to input any number and that is assighned to input_num in this function.
         input_num = user_input(x,y)
         #answer and input_num are assighned to check_number function which results in checking whether user input number is correct or not. if it's correct, then while loop will be break.
         if check_number(answer,input_num) == 1:
+            count = count + 1
             break
+        count = count + 1
     #In the end, the system shows user input number and answer number just in case for checking by users.
     print("Your input number: " + str(input_num))
     print("Correct number: " + str(answer))
-   
+    print("Your attempts: " + str(count))
+
 #execute
 main()
     
